@@ -11,8 +11,6 @@ const UseMapView = (venue, options) => {
   const [mapView, setMapView] = useState();
   const mapRef = useRef(null);
   const isRendering = useRef(false);
-  console.log(mapView);
-  console.log("3");
   // Render the MapView asynchronously
   const renderVenue = useCallback(
     async (el, venue, options) => {
@@ -24,8 +22,6 @@ const UseMapView = (venue, options) => {
 
       const _mapView = await showVenue(el, venue, options);
       setMapView(_mapView);
-      console.log(mapView);
-      console.log("4");
       isRendering.current = false;
     },
     [isRendering, mapView, setMapView]
@@ -50,8 +46,6 @@ const UseMapView = (venue, options) => {
   // Intialize the MapView if the element has been created the and venue loaded afterwards
   useEffect(() => {
     if (mapView) {
-      console.log(mapView);
-      console.log("1");
       return;
     }
 
@@ -59,8 +53,6 @@ const UseMapView = (venue, options) => {
       renderVenue(mapRef.current, venue, options);
     }
   }, [venue, mapView, renderVenue, options]);
-  console.log(mapView);
-  console.log("2");
   return { mapView, elementRef };
 };
 

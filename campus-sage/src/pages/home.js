@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 const Home = () => {
   const navigate = useNavigate();
   const Chatbot = () => navigate("/chat");
-  const Qr = () => navigate("/scan");
+  const Setting = () => navigate("/settings");
   const Mapp = () => navigate("/map");
   return (
     <div>
@@ -13,29 +13,17 @@ const Home = () => {
             Campus Sage
           </h1>
           <div className="flex font-bold hover:from-neutral-500">
-            <button className="p-8 hover:text-[#00df9a] text-xl  ">
+            <button
+              onClick={Setting}
+              className="p-8 hover:text-[#00df9a] text-xl  "
+            >
               Setting
             </button>
           </div>
         </div>
       </header>
       <body className="pt-28">
-        <article className=" z-10  grid grid-flow-row hover:scale-105 content-center h-96 m-2 max-w-[1080px] mx-auto bg-white border-b-4 bg-opacity-40 border-black rounded-md">
-          <h1 className="text-4xl text-center m-2 font-bold">QR SCANNER</h1>
-          <button
-            onClick={Qr}
-            className=" h-56 w-56 mx-auto bg-[#00df9a] hover:bg-[#1a9770] text-white font-extrabold  border-b-8 border-[#1a9770] hover:border-[#00df9a] rounded"
-          >
-            Scan QR code
-          </button>
-          <h1 className=" text-center text-base font-bold pt-4">
-            click on the button to scan the qrcode of your curent location.
-            <br />
-            this will allow us to show where you are standing right now in the
-            map
-          </h1>
-        </article>
-        <article className="grid grid-flow-col  max-w-[1080px] mx-auto ">
+        <article className="grid grid-flow-col  max-w-[1080px] mx-auto mt-20 ">
           <article className=" relative h-60  mr-2 hover:scale-105 bg-opacity-40  bg-white border-r-4 border-black rounded-md">
             <h1 className="text-2xl text-center text-[#000300] font-bold">
               ASK OUR SAGE
@@ -48,7 +36,7 @@ const Home = () => {
               ></img>
               <button
                 onClick={Chatbot}
-                className=" absolute right-0 h-8 w-20 mx-auto bg-[#00df9a] hover:bg-[#1a9770] text-white font-extrabold border-l-4 border-b-4 border-[#1a9770] hover:border-[#00df9a] rounded"
+                className=" absolute right-1/3 h-8 w-40 mx-auto bg-[#00df9a] hover:bg-[#1a9770] text-white font-extrabold border-l-4 border-b-4 border-[#1a9770] hover:border-[#00df9a] rounded"
               >
                 Chat
               </button>
