@@ -32,7 +32,6 @@ const Navbar = () => {
         >
           Chat
         </button>
-        <button className="p-8 hover:text-[#00df9a] text-xl  ">Setting</button>
       </div>
       <div onClick={handleNav} className="block md:hidden">
         {!nav ? <AiOutlineClose size={30} /> : <AiOutlineMenu size={30} />}
@@ -62,9 +61,6 @@ const Navbar = () => {
             className="p-4  border-b border-gray-600 hover:text-[#00df9a] "
           >
             Chat
-          </li>
-          <li className="p-4  border-b border-gray-600 hover:text-[#00df9a] ">
-            Setting
           </li>
         </ul>
       </div>

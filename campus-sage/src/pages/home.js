@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 const Home = () => {
   const navigate = useNavigate();
   const Chatbot = () => navigate("/chat");
-  const Setting = () => navigate("/settings");
   const Mapp = () => navigate("/map");
   return (
     <div>
@@ -12,14 +11,6 @@ const Home = () => {
           <h1 className="w-full text-3xl font-bold text-[#00df9a]">
             Campus Sage
           </h1>
-          <div className="flex font-bold hover:from-neutral-500">
-            <button
-              onClick={Setting}
-              className="p-8 hover:text-[#00df9a] text-xl  "
-            >
-              Setting
-            </button>
-          </div>
         </div>
       </header>
       <body className="pt-28">
@@ -32,7 +23,7 @@ const Home = () => {
               <img
                 src="/images/msg.jpeg"
                 className="h-40 w-full rounded-md  "
-                alt="lena p"
+                alt="error"
               ></img>
               <button
                 onClick={Chatbot}
