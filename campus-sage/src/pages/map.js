@@ -7,7 +7,7 @@ export default function Map() {
         <Navbar />
       </header>
       <body>
-        <div className="h-1/2 max-w-[1080px] mx-auto mt-20">
+        <div className="h-1/2 max-w-[1080px] mx-auto mt-10">
           <iframe
             href="https://www.mappedin.com/"
             title="Mappedin Map"

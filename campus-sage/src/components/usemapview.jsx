@@ -42,6 +42,44 @@ const UseMapView = (venue, options) => {
     },
     [mapView, venue, renderVenue, options]
   );
+  // Add all the labels to the map.
+  mapView.Labels.all();
+
+  // Setting the initial floor to Floor.id 'm_123456789'.
+  mapView = show3dMap(document.getElementById("mappedin-map"), mapData, {
+    initialFloor: "groundfloor",
+  });
+
+  mapView.on("click", async (event) => {
+    const clickedLocation = event.coordinate;
+    const destination = mapData
+      .getByType("space")
+      .find((s) => s.name === pindropped);
+
+    // If the destination is found, navigate to it.
+    if (destination) {
+      //Ensure that directions could be generated (user clicked on a navigable space).
+      const directions = mapView.getDirections(clickedLocation, destination);
+
+      if (directions) {
+        // Navigate from the clicked location to the droppedpin location.
+        mapView.Navigation.draw(directions, {
+          pathOptions: {
+            nearRadius: 1,
+            farRadius: 1,
+          },
+        });
+      }
+    }
+  });
+
+  // Get the directions between two spaces.
+  const directions = mapView.getDirections(startSpace, endSpace);
+  // Draw a path using the directions' coordinates array to show the route.
+  path = mapView.Paths.add(directions.coordinates, {
+    nearRadius: 0.5,
+    farRadius: 0.5,
+  });
 
   // Intialize the MapView if the element has been created the and venue loaded afterwards
   useEffect(() => {

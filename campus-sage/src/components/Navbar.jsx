@@ -3,7 +3,6 @@ import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
 const Navbar = () => {
   const navigate = useNavigate();
-  const Chatbot = () => navigate("/chat");
   const Mapp = () => navigate("/map");
   const Backhome = () => navigate("/");
 
@@ -25,12 +24,6 @@ const Navbar = () => {
         </button>
         <button onClick={Mapp} className="p-8 hover:text-[#00df9a] text-xl  ">
           Map
-        </button>
-        <button
-          onClick={Chatbot}
-          className="p-8 hover:text-[#00df9a] text-xl  "
-        >
-          Chat
         </button>
       </div>
       <div onClick={handleNav} className="block md:hidden">
@@ -55,12 +48,6 @@ const Navbar = () => {
             className="p-4  border-b border-gray-600 hover:text-[#00df9a] "
           >
             Map
-          </li>
-          <li
-            onClick={Chatbot}
-            className="p-4  border-b border-gray-600 hover:text-[#00df9a] "
-          >
-            Chat
           </li>
         </ul>
       </div>
